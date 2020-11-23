@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Binding</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    
+    <div id="app">
+        <p><a v-bind:href="link">OLHA OQ EU SINTO POR VC</a></p>
+        <p><a :href="link">reduzida</a></p>
+        <p>
+            <input type="text" v-model="nome"><br>
+            <span>{{nome}}</span>
+        </p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                nome: "Joara",
+                link: "https://static.mundodasmensagens.com/upload/listas/m/e/mensagens-de-eu-te-amo-3V5lN-fxl.png"
+            },
+            watch:{
+                nome(valor){
+                    console.log(valor.toUpperCase())
+                }
+            }
+        })
+    </script>
+</body>
+</html>
